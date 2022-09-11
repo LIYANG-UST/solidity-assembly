@@ -24,4 +24,16 @@ describe("Lock", function () {
 
     expect(await readVariable.readNumberAssembly()).to.equal(number);
   });
+
+  it("should be able to set new number", async function () {
+    await readVariable.main();
+
+    expect(await readVariable.number()).to.equal(1);
+  });
+
+  it("should be able to set new number via assembly", async function () {
+    await readVariable.mainAssembly();
+
+    expect(await readVariable.number()).to.equal(1);
+  });
 });
